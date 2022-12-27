@@ -52,7 +52,7 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        console.log("Congradulations! You Won!");
+        console.log("Congratulations! You Won!");
     } else if (playerScore < computerScore) {
         console.log("Too Bad! You Lost!");
     } else {
