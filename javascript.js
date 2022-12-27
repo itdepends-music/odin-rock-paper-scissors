@@ -32,3 +32,30 @@ function playRound(playerSelection, computerSelection) {
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock Paper Scissors: ");
+        let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+
+        console.log(result);
+
+        if (result.startsWith("You Win!")) {
+            playerScore++;
+        } else if (result.startsWith("You Lose!")) {
+            computerScore++;
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log("Congradulations! You Won!");
+    } else if (playerScore < computerScore) {
+        console.log("Too Bad! You Lost!");
+    } else {
+        console.log("Draw!!!!")
+    }
+}
