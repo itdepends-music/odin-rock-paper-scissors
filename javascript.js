@@ -56,6 +56,6 @@ function game() {
     } else if (playerScore < computerScore) {
         console.log("Too Bad! You Lost!");
     } else {
-        console.log("Draw!!!!")
+        console.log("Draw!!!!");
     }
 }
