@@ -1,10 +1,10 @@
 function getComputerChoice () {
     // generate random integer between 1 and 3
-    random_number = Math.floor(Math.random() * 3) + 1;
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
 
-    if (random_number === 1) {
+    if (randomNumber === 1) {
         return "Rock";
-    } else if (random_number === 2) {
+    } else if (randomNumber === 2) {
         return "Paper";
     } else {
         return "Scissors";
@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
         return `Draw! Both players played ${playerSelection}`;
     }
 
-    let didPlayerWin = (
+    const didPlayerWin = (
         (playerSelection === "Rock" && computerSelection === "Scissors") ||
         (playerSelection === "Paper" && computerSelection === "Rock") ||
         (playerSelection === "Scissors" && computerSelection === "Paper")
@@ -33,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// legacy function to run from command line
 function game() {
     let playerScore = 0;
     let computerScore = 0;
@@ -59,3 +60,22 @@ function game() {
         console.log("Draw!!!!");
     }
 }
+
+const rock_btn = document.querySelector('#rock');
+const paper_btn = document.querySelector('#paper');
+const scissors_btn = document.querySelector('#scissors');
+
+rock_btn.addEventListener('click', () => {
+    const result = playRound('rock', getComputerChoice());
+    console.log(result);
+})
+
+paper_btn.addEventListener('click', () => {
+    const result = playRound('paper', getComputerChoice());
+    console.log(result);
+})
+
+scissors_btn.addEventListener('click', () => {
+    const result = playRound('scissors', getComputerChoice());
+    console.log(result);
+})
