@@ -78,13 +78,20 @@ function updateScore(result) {
         winCount++;
     } else if (result.startsWith('You Lose!')) {
         loseCount++;
+    } else {
+        winCount += 0.5;
+        loseCount += 0.5;
     }
 
+    winCountP.textContent = `Human: ${winCount}`;
+    loseCountP.textContent = `Computer: ${loseCount}`;
     console.log(playCount, winCount, loseCount);
 }
 
 
 const roundResult = document.querySelector('#roundResult');
+const winCountP = document.querySelector('#winCount');
+const loseCountP = document.querySelector('#loseCount')
 
 const buttons = document.querySelectorAll('.buttons button');
 buttons.forEach((button) => {
