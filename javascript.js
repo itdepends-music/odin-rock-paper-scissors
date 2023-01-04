@@ -68,12 +68,10 @@ function buttonHandler(event) {
     updateScore(result);
 }
 
-let playCount = 0;
 let winCount = 0;
 let loseCount = 0;
 
 function updateScore(result) {
-    playCount++;
     if (result.startsWith('You Win!')) {
         winCount++;
     } else if (result.startsWith('You Lose!')) {
@@ -86,6 +84,22 @@ function updateScore(result) {
     winCountP.textContent = `Human: ${winCount}`;
     loseCountP.textContent = `Computer: ${loseCount}`;
     console.log(playCount, winCount, loseCount);
+
+    if (winCount >= 5 || loseCount >= 5) { resetScore(); }
+}
+
+function resetScore() {
+    if (winCount > loseCount) {
+        console.log("Congratulations! You Won!");
+    } else if (winCount < loseCount) {
+        console.log("Too Bad! You Lost!");
+    } else {
+        console.log("Draw!!!!");
+    }
+
+    playCount = 0;
+    winCount = 0;
+    loseCount = 0;
 }
 
 
