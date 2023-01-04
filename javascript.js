@@ -65,6 +65,22 @@ function buttonHandler(event) {
     buttonId = this.id;
     const result = playRound(buttonId);
     roundResult.textContent = result;
+    updateScore(result);
+}
+
+let playCount = 0;
+let winCount = 0;
+let loseCount = 0;
+
+function updateScore(result) {
+    playCount++;
+    if (result.startsWith('You Win!')) {
+        winCount++;
+    } else if (result.startsWith('You Lose!')) {
+        loseCount++;
+    }
+
+    console.log(playCount, winCount, loseCount);
 }
 
 
