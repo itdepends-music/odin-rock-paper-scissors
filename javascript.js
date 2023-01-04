@@ -63,7 +63,7 @@ function game() {
 
 function buttonHandler(event) {
     buttonId = this.id;
-    const result = playRound('id');
+    const result = playRound(buttonId);
     roundResult.textContent = result;
 }
 
