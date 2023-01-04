@@ -83,31 +83,42 @@ function updateScore(result) {
 
     winCountP.textContent = `Human: ${winCount}`;
     loseCountP.textContent = `Computer: ${loseCount}`;
-    console.log(playCount, winCount, loseCount);
+    totalResults.textContent = '';  
 
     if (winCount >= 5 || loseCount >= 5) { resetScore(); }
 }
 
 function resetScore() {
     if (winCount > loseCount) {
-        console.log("Congratulations! You Won!");
+        totalResults.textContent = "Congratulations! You Won!";
     } else if (winCount < loseCount) {
-        console.log("Too Bad! You Lost!");
+        totalResults.textContent = "Too Bad! You Lost!"
     } else {
-        console.log("Draw!!!!");
+        totalResults.textContent = "Draw!!!!";
     }
 
-    playCount = 0;
+    winCountP.textContent = `Human: ${winCount}`;
+    loseCountP.textContent= `Computer: ${loseCount}`;
+}
+
+function resetButtonHandler() {
+    winCountP.textContent = '';
+    loseCountP.textContent = '';
+    roundResult.textContent = '';
+    totalResults.textContent = '';
     winCount = 0;
     loseCount = 0;
 }
 
-
+const totalResults = document.querySelector('#totalResults');
 const roundResult = document.querySelector('#roundResult');
 const winCountP = document.querySelector('#winCount');
 const loseCountP = document.querySelector('#loseCount')
+const resetButton = document.querySelector('#reset');
 
 const buttons = document.querySelectorAll('.buttons button');
 buttons.forEach((button) => {
     button.addEventListener('click', buttonHandler);
 });
+
+resetButton.addEventListener('click', resetButtonHandler);
