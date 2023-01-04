@@ -33,34 +33,6 @@ function playRound(playerSelection) {
     }
 }
 
-// legacy function to run from command line
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock Paper Scissors: ");
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-
-        console.log(result);
-
-        if (result.startsWith("You Win!")) {
-            playerScore++;
-        } else if (result.startsWith("You Lose!")) {
-            computerScore++;
-        }
-    }
-
-    if (playerScore > computerScore) {
-        console.log("Congratulations! You Won!");
-    } else if (playerScore < computerScore) {
-        console.log("Too Bad! You Lost!");
-    } else {
-        console.log("Draw!!!!");
-    }
-}
-
 function buttonHandler(event) {
     buttonId = this.id;
     const result = playRound(buttonId);
