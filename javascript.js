@@ -11,10 +11,10 @@ function getComputerChoice () {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
     // Change case to first letter uppercase and rest lowercase
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-    computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase();
+    const computerSelection = getComputerChoice();
 
     if (playerSelection === computerSelection) {
         return `Draw! Both players played ${playerSelection}`;
@@ -61,23 +61,16 @@ function game() {
     }
 }
 
-const rockBtn = document.querySelector('#rock');
-const paperBtn = document.querySelector('#paper');
-const scissorsBtn = document.querySelector('#scissors');
+function buttonHandler(event) {
+    buttonId = this.id;
+    const result = playRound(buttonId);
+    roundResult.textContent = result;
+}
+
 
 const roundResult = document.querySelector('#roundResult');
 
-rockBtn.addEventListener('click', () => {
-    const result = playRound('rock', getComputerChoice());
-    roundResult.textContent = result;
-})
-
-paperBtn.addEventListener('click', () => {
-    const result = playRound('paper', getComputerChoice());
-    roundResult.textContent = result;
-})
-
-scissorsBtn.addEventListener('click', () => {
-    const result = playRound('scissors', getComputerChoice());
-    roundResult.textContent = result;
-})
+const buttons = document.querySelectorAll('.buttons button');
+buttons.forEach((button) => {
+    button.addEventListener('click', buttonHandler);
+});
