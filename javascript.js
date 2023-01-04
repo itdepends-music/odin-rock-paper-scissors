@@ -53,24 +53,18 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        return 1;
+        console.log("Congratulations! You Won!");
     } else if (playerScore < computerScore) {
-        return -1;
+        console.log("Too Bad! You Lost!");
     } else {
-        return 0;
+        console.log("Draw!!!!");
     }
 }
 
 function buttonHandler(event) {
-    const buttonId = this.id;
-    const result = playRound(buttonId);
-    if (result === 1) {
-        roundResult.textContent = "Congratulations! You Won!";
-    } else if (result === 0) {
-        roundResult.textContent = "Draw!!!!";
-    } else if (result === -1) {
-        roundResult.textContent = "Too Bad! You Lost!";
-    }
+    buttonId = this.id;
+    const result = playRound('id');
+    roundResult.textContent = result;
 }
 
 
