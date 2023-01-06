@@ -71,6 +71,11 @@ function resetScore() {
 
     winCountP.textContent = `Human: ${winCount}`;
     loseCountP.textContent= `Computer: ${loseCount}`;
+
+    resetButton.classList.remove('hidden');
+    buttons.forEach((button) => {
+        button.classList.add('hidden');
+    });
 }
 
 function resetButtonHandler() {
@@ -80,6 +85,11 @@ function resetButtonHandler() {
     totalResults.textContent = '';
     winCount = 0;
     loseCount = 0;
+
+    resetButton.classList.add('hidden');
+    buttons.forEach((button ) => {
+        button.classList.remove('hidden');
+    });
 }
 
 const totalResults = document.querySelector('#totalResults');
