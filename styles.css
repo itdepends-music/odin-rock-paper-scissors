@@ -11,6 +11,9 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .buttons, .results {
@@ -35,5 +38,10 @@ body {
 }
 
 #totalResults {
-    font-size: larger;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 48px;
 }
