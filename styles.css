@@ -1,3 +1,31 @@
 .hidden {
     display: none;
 }
+
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.buttons, .results {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    flex-grow: 1;
+}
+
+.resetButtonWrapper {
+    height: 30px;
+}
