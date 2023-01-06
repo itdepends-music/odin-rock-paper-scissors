@@ -33,3 +33,7 @@ body {
 * {
     text-align: center;
 }
+
+#totalResults {
+    font-size: larger;
+}
