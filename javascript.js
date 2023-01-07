@@ -61,6 +61,7 @@ function updateScore(result) {
 }
 
 function resetScore() {
+    totalResults.classList.remove('hidden');
     if (winCount > loseCount) {
         totalResults.textContent = "Congratulations! You Won!";
     } else if (winCount < loseCount) {
@@ -87,6 +88,7 @@ function resetButtonHandler() {
     loseCount = 0;
 
     resetButton.classList.add('hidden');
+    totalResults.classList.add('hidden');
     buttons.forEach((button ) => {
         button.classList.remove('hidden');
     });
