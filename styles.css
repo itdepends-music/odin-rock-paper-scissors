@@ -23,6 +23,8 @@ body {
 
 .buttons {
     display: flex;
+    gap: 32px;
+    margin: 32px;
 }
 
 .buttons button {
@@ -30,7 +32,8 @@ body {
 }
 
 .resetButtonWrapper {
-    height: 30px;
+    height: 50px;
+    margin-bottom: 25px;
 }
 
 * {
@@ -44,4 +47,19 @@ body {
 
 h1 {
     font-size: 48px;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid red;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#reset {
+    height: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
 }
