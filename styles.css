@@ -82,3 +82,7 @@ p {
     flex-direction: column;
     margin-bottom: 100px;
 }
+
+button {
+    cursor: pointer;
+}
